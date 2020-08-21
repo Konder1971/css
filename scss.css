@@ -1,0 +1,211 @@
+/* 
+https://proglib.io/p/advanced-scss/ 
+https://tproger.ru/translations/complete-sass-guide/
+*/
+
+$page: 12;
+a {
+  color: #000;
+  &:hover {
+    color: red;
+  }
+  &:before { content: "Страница #{ $page }!"; }
+}
+
+
+p.message-#{$alertClass} {
+    color: red;
+}
+/* скомпилированный CSS */
+p.message-error {
+  color: red;
+}
+
+
+$message-color: blue !default; 
+/* присваивание с !default сработает только в том случае, если эта переменная 
+не была инициализирована раньше (в отличие от стандартного присваивания, 
+которое всегда будет перезаписывать возможное предыдущее значение) */
+p.message {
+    color: $message-color;
+}
+/* скомпилированный CSS */
+p.message {
+  color: blue;
+}
+
+
+$breakpoint: 768px;
+@media (max-width: #{$breakpoint}) {
+  /* Этот блок применяется только к viewport-ам шириной <= #{$breakpoint} ... */
+}
+/* скомпилированный CSS */
+@media (max-width: 768px) {
+  /* Этот блок применяется только к viewport-ам шириной <= 768px ... */
+}
+
+
+@each $name in 'save' 'cancel' 'help' {
+  .icon-#{$name} {
+      background-image: url('/images/#{$name}.png');
+  }
+}
+/* скомпилированный CSS */
+.icon-save {
+  background-image: url("/images/save.png");
+}
+.icon-cancel {
+  background-image: url("/images/cancel.png");
+}
+.icon-help {
+  background-image: url("/images/help.png");
+}
+
+
+$buttonConfig: 'save' 50px, 'cancel' 50px, 'help' 100px; /* TODO: move to _settings.scss */
+@each $tuple in $buttonConfig {
+  .button-#{nth($tuple, 1)} {
+      width: nth($tuple, 2);
+  }
+}
+/* скомпилированный CSS */
+.button-save {
+  width: 50px;
+}
+.button-cancel {
+  width: 50px;
+}
+.button-help {
+  width: 100px;
+}
+
+
+@function make-greener($value) { /* арифметика цветов, кстати, в порядке */
+  @return $value + rgb(0,50,0);
+}
+p {
+  background: make-greener(gray);
+}
+/* скомпилированный CSS Вышеуказанный цвет - серый с небольшим зеленым оттенком */
+p {
+  background: #80b280;
+}
+
+
+.animal {
+  background: gray;
+}
+.cat {
+  @extend .animal;
+  color: white;
+}
+/* скомпилированный CSS То есть, .cat имеет все свойства своего «родительского класса» .animal 
+плюс любые специальные, которые он добавляет или переопределяет. */
+.animal, .cat {
+  background: gray;
+}
+.cat {
+  color: white;
+}
+
+
+/*
+Миксины (они же примеси)
+Миксины объявляются директивой @mixin. После неё должно стоять имя миксина и, опционально,
+ его параметры, а также блок, содержащий тело миксина. Например, можно определить миксин flexible(), 
+ который далее будет включён, например, в класс .centered-elements следующим образом: */
+ @mixin flexible () {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.centered-elements {
+  @include flexible ();
+  border: 1px solid gray;
+}
+/* 
+Теперь каждый раз после применения класса .centered-elements к HTML-элементу, последний будет преобразован во Flexbox.
+Миксины могут также содержать селекторы, в том числе со свойствами. А селекторы могут содержать ссылки на родительский элемент через амперсанд (&), вы ведь помните про него?
+*/
+
+
+@mixin border-radius($radius) {        // Префиксы для:
+  -webkit-border-radius: $radius;    // Chrome и Safari
+     -moz-border-radius: $radius;    // Firefox
+      -ms-border-radius: $radius;    // Internet Explorer
+       -o-border-radius: $radius;    // Opera
+          border-radius: $radius;    // Стандартный CSS
+}
+/* Пример использования миксина border-radius после его создания */
+.box { @include border-radius(10px); }
+
+
+
+@mixin animal {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+}
+.cat {
+  @include animal;
+  color: white;
+}
+.dog {
+  @include animal;
+  color: black;
+}
+/* скомпилированный CSS Обратите внимание, что только последнее свойство ( color) отличается, в остальном они одинаковы */
+.cat {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+  color: white;
+}
+.dog {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+  color: black;
+}
+
+
+.animal {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+}
+.cat {
+  @extend .animal;
+  color: white;
+}
+.dog {
+  @extend .animal;
+  color: black;
+}
+/* скомпилированный CSS */
+.animal, .cat, .dog {
+  background: gray;
+  border: 1px solid red;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+  padding: 20px;
+}
+.cat {
+  color: white;
+}
+.dog {
+  color: black;
+}
