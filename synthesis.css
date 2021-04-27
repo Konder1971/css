@@ -1,0 +1,356 @@
+
+
+Это в head на страницу
+<meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="x-rim-auto-match" content="none" />	
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="icon" href="favicon.png" type="image/x-icon" />
+<link rel="apple-touch-icon" href="favicon.png" type="image/x-icon" />
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+{  // брать синий фон при клике на элемент
+-webkit-tap-highlight-color: transparent;
+-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+стиль, который убирает закругления и тень у полей в WebKit браузерах
+input:not([type=checkbox]):not([type=radio]),
+textarea, 
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+внедряем шрифт
+@font-face {
+	font-family: 'eau';
+	src: url('../fonts/eau_sans_book-webfont.eot');
+	src: local('☺'),
+		 url('../fonts/eau_sans_book-webfont.otf') format('otf'),   
+		 url('../fonts/eau_sans_book-webfont.woff') format('woff'),
+		 url('../fonts/eau_sans_book-webfont.woff2') format('woff2'), 
+		 url('../fonts/eau_sans_book-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}	
+
+{
+	background-color:#ededed;
+	filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#fff, endColorstr=#ededed);
+	background-image:-moz-linear-gradient(top, #fff 0%, #f7f7f7 50%,#ededed 100%);
+	background-image:linear-gradient(top, #fff 0%, #f7f7f7 50%, #ededed 100%);
+	background-image:-webkit-linear-gradient(top, #fff 0%, #f7f7f7 50%,#ededed 100%);
+	background-image:-o-linear-gradient(top, #fff 0%, #f7f7f7 50%, #ededed 100%);
+	background-image:-ms-linear-gradient(top, #fff 0%, #f7f7f7 50%, #ededed 100%);
+	background-image:-webkit-gradient(linear, right top, right bottom, color-stop(0%,#fff), color-stop(50%,#f7f7f7),color-stop(100%,#ededed));
+}
+{
+	background: #f16a22; /* Old Browsers */
+	background: -webkit-linear-gradient(left,#f16a22,#ff9900); /*Safari 5.1-6*/
+	background: -o-linear-gradient(left,#f16a22,#ff9900); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(left,#f16a22,#ff9900); /*Fx 3.6-15*/
+	background: linear-gradient(to right, #f16a22, #ff9900); /*Standard*/
+}
+
+
+{
+	opacity: 0.82;
+	background: -webkit-linear-gradient(-180deg, #FFFFFF 0%, #000000 100%); /*Safari 5.1-6*/
+    background: -o-linear-gradient(-180deg, #FFFFFF 0%, #000000 100%); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(-180deg, #FFFFFF 0%, #000000 100%); /*Fx 3.6-15*/
+	background-image: linear-gradient(-180deg, #FFFFFF 0%, #000000 100%);
+}
+
+{
+  opacity: 0.68;
+	background: -webkit-linear-gradient(-180deg, #FFFFFF 0%, #000000 100%); /*Safari 5.1-6*/
+	background: -o-linear-gradient(-180deg, #FFFFFF 0%, #000000 100%); /*Opera 11.1-12*/
+	background: -moz-linear-gradient(-180deg, #FFFFFF 0%, #000000 100%); /*Fx 3.6-15*/
+	background-image: linear-gradient(-180deg, #FFFFFF 0%, #000000 100%);
+	background-image: linear-gradient(-180deg, #FFFFFF 0%, #000000 100%);
+}
+
+увеличение при наведении
+a:hover img{
+	transform: scale(1.05);
+	-ms-transform: scale(1.05);
+	-webkit-transform: scale(1.05);
+	-o-transform: scale(1.05);
+	-moz-transform: scale(1.05);
+}
+
+время реакции 
+{
+	-webkit-transition: 300ms ease-out;
+	-moz-transition: 300ms ease-out;
+	transition: 300ms ease-out;
+}
+{
+	transition: all 500ms ease-in-out;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-ms-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
+}
+
+{	
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	border-radius:0;
+}
+
+{
+	-webkit-box-shadow: none;
+	-moz-box-shadow:    none;
+	box-shadow:         none;
+}
+
+#expertise-ic p{
+  --box-shadow-color: tomato;
+  box-shadow: 0 0 0 5px var(--box-shadow-color);
+  font-size: var(--font-size, 12px);
+}
+#expertise-ic p:hover {
+  --box-shadow-color: plum;
+  font-size: calc(var(--font-size) * 2);
+}
+
+{
+	background-repeat:no-repeat;
+	background-position:top center;	
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover;
+}
+
+img {
+	max-width: 100%;
+	width: auto\9;
+	height: auto;
+	vertical-align: middle;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+
+группируем в 3 колонки
+.colluns-3-coll{
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;       
+}
+
+прозрачность
+{
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	filter:progid:DXImageTransform.Microsoft.Alpha(opacity = 50); 
+	filter: alpha(opacity=50);
+	-moz-opacity: 0.4; 
+	-khtml-opacity: 0.4;
+	opacity: 0.4;
+}
+
+сдвигаем позицию к ...
+{
+	-moz-transform:translate(-50%, 0);
+	-ms-transform:translate(-50%, 0);
+	-webkit-transform:translate(-50%, 0);
+	-o-transform:translate(-50%, 0);
+	transform:translate(-50%, 0); 
+
+	-moz-transform:translate(-50%, -50%);
+	-ms-transform:translate(-50%, -50%);
+	-webkit-transform:translate(-50% -50%);
+	-o-transform:translate(-50%, -50%);
+	transform:translate(-50%, -50%);
+}
+
+вращение
+{
+	transform:rotate(360deg);
+	-ms-transform:rotate(360deg);
+	-webkit-transform:rotate(360deg);
+}
+
+
+.form-control::-webkit-input-placeholder { color:#636e89; font-size:14px; opacity:.5; }
+.form-control::-moz-placeholder          { color:#636e89; font-size:14px; opacity:.5; }
+.form-control:-moz-placeholder           { color:#636e89; font-size:14px; opacity:.5; }
+.form-control:-ms-input-placeholder      { color:#636e89; font-size:14px; opacity:.5; }
+
+input[placeholder]          {text-overflow:ellipsis;}
+input::-moz-placeholder     {text-overflow:ellipsis;} 
+input:-moz-placeholder      {text-overflow:ellipsis;} 
+input:-ms-input-placeholder {text-overflow:ellipsis;} 
+
+.form-control::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+.form-control::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+.form-control:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+.form-control:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+
+.form-control:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.form-control:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+.form-control:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+.form-control:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+
+sup { vertical-align: baseline; position: relative; top: -0.4em; }
+sub { vertical-align: baseline; position: relative; bottom: -0.4em; }
+
+@media (min-width: 1200px) {}
+@media (min-width: 992px) and (max-width: 1199px) {}
+@media (min-width: 768px) and (max-width: 991px) {}
+@media (max-width: 767px) {}
+
+@media (min-width: 768px) {.mobile{display:none!important;}}
+@media (max-width: 767px) {.desktop{display:none!important;}}
+*:focus,
+a:focus{
+	outline:0;
+	outline-offset:0;
+}
+*{
+	-webkit-appearance: none;/* delete the default styles ios */
+}
+html, body{
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+ /*«auto» (текст на мобильнике подстраивается автоматически); none» (размер текста на мобильнике не изменяется); «60%» (или другой процент) означает желаемый относительный размер текста на мобильнике */
+    -webkit-font-smoothing: antialiased;/* none - сглаживание вообще отключено | antialiased - средняя степень сглаживания | subpixel-antialiased - сильная степень сглаживания. */
+    -moz-osx-font-smoothing: grayscale;/* auto | inherit | unset | grayscale | */
+}
+
+/*стиль, который убирает закругления и тень у полей в WebKit браузерах*/
+input:not([type=checkbox]):not([type=radio]), textarea, select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+/*
+С телефонами можно попробовать два варианта, добавить в head:
+<meta name="format-detection" content="telephone=no">
+или через CSS:
+a[href^=tel]{
+    color: #000;
+}
+*/
+
+
+https://docs.emmet.io/cheat-sheet/
+https://docs.emmet.io/cheatsheet-a5.pdf
+
+/* описывает стили для blockquote если соблюдена такая последовательность кода
+<div></div>
+<p></p>
+<blockquote></blockquote>
+*/
+div+p+blockquote{
+	color:#c00;
+	font-size:24px;
+}
+
+
+
+
+/* переменные */
+:root{
+    --first-var: green;
+    --grey: #ccc
+}
+body{
+    background: var(--first-var,red); /*ошибочное значение обработает в красный цвет заливки*/
+}
+.class{
+    padding: calc(1rem + 20px) calc(1rem + px);
+}
+.grey{
+    background: var(--grey); 
+}
+
+/* теперь чтобы составить медиазапрос для экранов < 320px в ширину,
+не нужно переопределять свойство целиком. Достаточно изменить значение переменной */
+.title {
+	--wrapper-width: 50%;
+	width: var(--wrapper-width);
+} 
+@media (max-width: 320px) {
+	--wrapper-width: 100%;
+}
+
+
+/* это ещё ждёт
+:root{
+    --first-mix:{
+        background: blue;
+        padding: 50px;
+        color:#fff;
+    }
+}
+.blue{
+    @apply --first-mix:
+}
+*/
+
+
+@media all and (-webkit-min-device-pixel-ratio:0) {
+	/*Всё, что вы сюда напишете, будет работать только с -webkit-*/
+	}
+
+
+
+
+
+
+  .buttonSlide-box {
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    z-index: 0;
+    transform:translate(-50%, 0);
+    -webkit-transform:translate(-50%, 0);
+    -moz-transform:translate(-50%, 0);
+    -ms-transform:translate(-50%, 0);
+    -o-transform:translate(-50%, 0);
+  }
+  .menu-slide-control {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    border: 1px solid #000;
+  }
+  .ms-prev {
+    float: left;
+  }
+  .ms-next {
+    float: right;
+  }
+  .menu-slide-control svg {
+    fill: rgba(0,46,60,.2);
+    height: 20px;
+  }
+  .menu-slide-control:hover svg { 
+    fill: rgba(0,46,60,.6);
+	}
+	
+	.buttonSlide-box {
+    display: none;
+  }
